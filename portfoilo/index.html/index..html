@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>이경민 · Kyung-Min Lee</title>
+<meta id="meta-desc" name="description" content="">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{overscroll-behavior:none;}
+::-webkit-scrollbar{display:none;}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:["'Noto Sans KR'","'Noto Sans'","sans-serif"]}}}}
+</script>
+<!-- 글자는 content.js에서 불러와요 -->
+<script src="content.js"></script>
+</head>
+<body class="bg-[#F6F5F2] text-[#111111] font-sans antialiased selection:bg-[#111111] selection:text-[#F6F5F2]">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 w-full bg-[#F6F5F2]/95 backdrop-blur-sm border-b border-[#e5e3dc]">
+  <div class="h-16 md:h-20 max-w-[1200px] mx-auto px-6 lg:px-0 flex items-center justify-between">
+    <a class="group" href="#">
+      <span id="nav-name" class="text-lg md:text-2xl font-medium group-hover:opacity-70 transition-opacity"></span>
+    </a>
+    <div class="flex items-center gap-6 md:gap-10">
+      <nav id="nav-desktop" class="hidden sm:flex items-center space-x-4 md:space-x-6 text-[#7A7A7A] text-[13px] md:text-sm"></nav>
+      <div class="flex items-center space-x-1.5 text-xs pl-2">
+        <span class="text-[#111111] font-semibold underline underline-offset-4 cursor-default">KR</span>
+        <span class="text-[#7A7A7A] select-none">/</span>
+        <a class="text-[#7A7A7A] hover:text-[#111111] transition-colors" href="#">EN</a>
+      </div>
+    </div>
+  </div>
+  <nav id="nav-mobile" class="sm:hidden flex justify-between px-6 pb-3 text-[12px] text-[#7A7A7A]"></nav>
+</header>
+
+<main class="w-full">
+<div class="max-w-[1200px] w-full mx-auto px-6 lg:px-0">
+
+  <!-- HERO -->
+  <section class="pt-14 pb-12 md:pt-20 md:pb-16" id="hero">
+    <h1 id="hero-name" class="text-4xl md:text-7xl lg:text-[5rem] font-normal leading-tight mb-4" style="font-family:'Playfair Display',serif;"></h1>
+    <p id="hero-sub" class="text-sm md:text-base text-[#7A7A7A]"></p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="pt-14 pb-14 md:pt-20 md:pb-20 border-t border-[#e5e3dc]" id="about">
+    <div class="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-14">
+      <div id="about-photo-wrap" class="hidden w-full max-w-[280px] md:w-[280px] shrink-0 aspect-[4/5] overflow-hidden bg-[#e5e3dc]">
+        <img id="about-photo" class="w-full h-full object-cover" alt="">
+      </div>
+      <div class="max-w-[880px] md:flex-1" style="word-break:keep-all;overflow-wrap:break-word;">
+        <span id="about-label" class="text-[18px] md:text-[21px] font-medium mb-6 block"></span>
+        <p id="about-headline" class="text-[20px] md:text-[26px] leading-[1.5] font-light mb-4"></p>
+        <div id="about-body" class="text-[15px] md:text-[16px] leading-[1.8] space-y-1"></div>
+      </div>
+    </div>
+    <div id="cols" class="w-full grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1.2fr] md:divide-x divide-[#e5e3dc] gap-12 md:gap-0 pt-4" style="word-break:keep-all;"></div>
+  </section>
+
+  <!-- WORK -->
+  <section class="pt-14 pb-14 md:pt-20 md:pb-20 border-t border-[#e5e3dc]" id="work">
+    <div class="flex items-baseline justify-between mb-10">
+      <span id="work-label" class="text-[18px] md:text-[21px] font-medium"></span>
+      <span id="work-count" class="text-xs text-[#7A7A7A]"></span>
+    </div>
+    <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pt-14 pb-14 md:pt-20 md:pb-20 border-t border-[#e5e3dc]" id="contact">
+    <span id="contact-label" class="text-[18px] md:text-[21px] font-medium mb-10 block"></span>
+    <div id="contact-items" class="flex flex-col md:flex-row md:items-baseline gap-8 md:gap-20"></div>
+  </section>
+
+</div>
+</main>
+
+<footer class="w-full border-t border-[#e5e3dc]">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-0 py-8 flex flex-col md:flex-row md:items-baseline justify-between gap-3">
+    <p id="footer-copy" class="text-xs text-[#7A7A7A]"></p>
+  </div>
+</footer>
+
+<!-- 작품 상세 보기 -->
+<div id="viewer" class="fixed inset-0 z-[100] hidden bg-[#F6F5F2] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="v-title">
+  <div class="sticky top-0 z-10 bg-[#F6F5F2]/95 backdrop-blur-sm border-b border-[#e5e3dc]">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-0 h-16 md:h-20 flex items-center justify-between">
+      <span id="v-count" class="text-xs text-[#7A7A7A]"></span>
+      <button id="v-close" class="text-sm hover:opacity-60 transition-opacity"></button>
+    </div>
+  </div>
+  <div class="max-w-[900px] mx-auto px-6 pt-10 pb-24" style="word-break:keep-all;">
+    <h2 id="v-title" class="text-3xl md:text-5xl font-light leading-tight"></h2>
+    <p id="v-cat" class="text-sm text-[#7A7A7A] mt-3"></p>
+    <p id="v-meta" class="text-[13px] text-[#7A7A7A] mt-1"></p>
+    <p id="v-desc" class="text-[15px] md:text-[16px] leading-[1.8] mt-8 max-w-[640px]"></p>
+    <div id="v-images" class="mt-12 space-y-8"></div>
+    <div class="mt-20 pt-8 border-t border-[#e5e3dc] flex justify-between text-sm">
+      <button id="v-prev" class="hover:opacity-60 transition-opacity"></button>
+      <button id="v-next" class="hover:opacity-60 transition-opacity"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* content.js의 글자를 화면에 채워 넣는 부분이에요. 보통은 고칠 필요가 없어요. */
+(function () {
+  const S = SITE;
+  const $ = id => document.getElementById(id);
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+  function setText(id, text) {
+    const e = $(id);
+    e.textContent = text || '';
+    e.style.display = text ? '' : 'none';
+  }
+
+  /* 기본 */
+  document.title = S.pageTitle;
+  $('meta-desc').setAttribute('content', S.pageDescription);
+  $('nav-name').textContent = S.name;
+  $('hero-name').textContent = S.name;
+  $('hero-sub').textContent = S.subtitle;
+
+  /* 메뉴 */
+  const links = [['#about', S.nav.about], ['#work', S.nav.work], ['#contact', S.nav.contact]];
+  links.forEach((l, i) => {
+    const a = el('a', 'hover:text-[#111111] transition-colors', l[1]);
+    a.href = l[0];
+    $('nav-desktop').appendChild(a);
+    if (i < links.length - 1) $('nav-desktop').appendChild(el('span', 'text-[#dcd9d0] select-none', '·'));
+    const m = el('a', '', l[1]);
+    m.href = l[0];
+    $('nav-mobile').appendChild(m);
+  });
+
+  /* 소개 */
+  $('about-label').textContent = S.nav.about;
+  $('about-headline').textContent = S.about.headline;
+  S.about.paragraphs.forEach(t => $('about-body').appendChild(el('p', '', t)));
+  if (S.about.photo) {
+    const img = $('about-photo');
+    img.alt = S.about.photoAlt || '';
+    img.onload = () => $('about-photo-wrap').classList.remove('hidden');
+    img.onerror = () => $('about-photo-wrap').classList.add('hidden');
+    img.src = S.about.photo;
+  }
+
+  /* 학력 · 전시 · 수상 */
+  [[S.education, 'md:pr-12'], [S.exhibitions, 'md:px-12'], [S.awards, 'md:pl-12']].forEach(pair => {
+    const d = pair[0];
+    const col = el('div', pair[1]);
+    col.appendChild(el('h2', 'text-[14px] font-medium text-[#7A7A7A] tracking-widest uppercase mb-6', d.title));
+    const ul = el('ul', 'space-y-4');
+    d.items.forEach(it => {
+      const li = el('li', 'leading-snug flex items-start');
+      li.appendChild(el('span', 'text-[#7A7A7A] text-[13px] mr-3 shrink-0', it.year));
+      const box = el('div', 'flex-1');
+      box.appendChild(el('span', 'text-[15px]', it.title));
+      if (it.sub) box.appendChild(el('span', 'block text-[#7A7A7A] text-[13px] mt-1', it.sub));
+      li.appendChild(box);
+      ul.appendChild(li);
+    });
+    if (d.more) ul.appendChild(el('li', 'text-[13px] text-[#7A7A7A] pt-2', d.more));
+    col.appendChild(ul);
+    $('cols').appendChild(col);
+  });
+
+  /* 연락 */
+  $('contact-label').textContent = S.nav.contact;
+  const C = S.contact;
+  function contactItem(label, node) {
+    const box = el('div', 'flex flex-col');
+    box.appendChild(el('span', 'text-xs text-[#7A7A7A] font-medium mb-1.5', label));
+    box.appendChild(node);
+    $('contact-items').appendChild(box);
+  }
+  const mail = el('a', 'text-base md:text-lg hover:opacity-60 transition-opacity', (C.emailIcon ? C.emailIcon + '  ' : '') + C.email);
+  mail.href = 'mailto:' + C.email;
+  contactItem(C.emailLabel, mail);
+  const ig = el('a', 'text-base md:text-lg hover:opacity-60 transition-opacity', '@' + C.instagram);
+  ig.href = 'https://instagram.com/' + C.instagram;
+  ig.target = '_blank';
+  ig.rel = 'noopener noreferrer';
+  contactItem(C.instagramLabel, ig);
+  contactItem(C.locationLabel, el('span', 'text-base md:text-lg', C.location));
+
+  /* 맨 아래 */
+  $('footer-copy').textContent = S.footer.copyright;
+
+  /* 작업 그리드 + 상세 보기 */
+  const works = S.work.items;
+  const viewer = $('viewer');
+  let current = 0;
+
+  $('work-label').textContent = S.nav.work;
+  $('work-count').textContent = S.work.countLabel;
+  $('v-close').textContent = S.viewer.close;
+  $('v-prev').textContent = S.viewer.prev;
+  $('v-next').textContent = S.viewer.next;
+
+  works.forEach((w, i) => {
+    const card = el('article', 'group flex flex-col cursor-pointer');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', w.title + ' 자세히 보기');
+
+    const frame = el('div', 'relative w-full aspect-[4/5] overflow-hidden bg-[#e5e3dc]');
+    const img = el('img', 'w-full h-full object-cover transition-opacity duration-500 [@media(hover:hover)]:group-hover:opacity-10 group-focus-visible:opacity-10');
+    img.src = w.images[0];
+    img.alt = w.title;
+    img.loading = 'lazy';
+    img.onerror = () => { img.style.display = 'none'; };
+    frame.appendChild(img);
+
+    const overlay = el('div', 'absolute inset-0 flex flex-col items-center justify-center text-center px-6 opacity-0 transition-opacity duration-500 [@media(hover:hover)]:group-hover:opacity-100 group-focus-visible:opacity-100');
+    overlay.appendChild(el('h3', 'text-xl font-normal', w.title));
+    overlay.appendChild(el('p', 'text-xs text-[#7A7A7A] mt-2', w.category));
+    overlay.appendChild(el('span', 'mt-6 text-[11px] tracking-widest border-b border-[#111111] pb-0.5', 'VIEW'));
+    frame.appendChild(overlay);
+    card.appendChild(frame);
+
+    /* 마우스가 없는 기기(폰, 태블릿)에서는 제목을 사진 아래에 보여줘요 */
+    const cap = el('div', 'mt-3.5 [@media(hover:hover)]:hidden');
+    cap.appendChild(el('h3', 'text-base font-normal', w.title));
+    cap.appendChild(el('p', 'text-xs text-[#7A7A7A] mt-1', w.category));
+    card.appendChild(cap);
+
+    card.addEventListener('click', () => openWork(i));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openWork(i); }
+    });
+    $('work-grid').appendChild(card);
+  });
+
+  function openWork(i) {
+    current = (i + works.length) % works.length;
+    const w = works[current];
+    setText('v-title', w.title);
+    setText('v-cat', w.category);
+    setText('v-meta', w.meta);
+    setText('v-desc', w.desc);
+    $('v-count').textContent = String(current + 1).padStart(2, '0') + ' / ' + String(works.length).padStart(2, '0');
+
+    const box = $('v-images');
+    box.innerHTML = '';
+    w.images.forEach(src => {
+      const im = document.createElement('img');
+      im.src = src;
+      im.alt = w.title;
+      im.className = 'w-full h-auto block';
+      im.onerror = () => im.remove();
+      box.appendChild(im);
+    });
+
+    viewer.classList.remove('hidden');
+    viewer.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeWork() {
+    viewer.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  $('v-close').addEventListener('click', closeWork);
+  $('v-prev').addEventListener('click', () => openWork(current - 1));
+  $('v-next').addEventListener('click', () => openWork(current + 1));
+  document.addEventListener('keydown', e => {
+    if (viewer.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeWork();
+    if (e.key === 'ArrowLeft') openWork(current - 1);
+    if (e.key === 'ArrowRight') openWork(current + 1);
+  });
+})();
+</script>
+
+</body>
+</html>
